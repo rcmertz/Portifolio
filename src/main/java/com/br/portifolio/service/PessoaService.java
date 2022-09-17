@@ -34,4 +34,12 @@ public class PessoaService {
         }
     }
 
+    public Boolean isNomeNotNull(Pessoa pessoa) {
+        if (pessoa.getNome() == null || pessoa.getNome().isEmpty()) {
+            throw new RuntimeException("O nome não foi fornecido, favor insira um nome valido.");
+        } else {
+            return true;
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.br.portifolio.service;
 import com.br.portifolio.entity.Projeto;
+import com.br.portifolio.entity.StatusProjetoEnum;
 import com.br.portifolio.repository.ProjetoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -33,4 +34,14 @@ public class ProjetoService {
                 throw new RuntimeException();
             }
         }
+
+    public void deleteById(Long idProjeto, Projeto projeto) {
+        if (projetoRepository.existsById(idProjeto)) {
+            if (projeto.getStatus() != StatusProjetoEnum.iniciado)
+            projetoRepository.deleteById(idProjeto);
+        }else{
+            throw new RuntimeException("O projeto nao pode ser excluido, pois ja foi iniciado");
+        }
+    }
+
 }

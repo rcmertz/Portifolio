@@ -44,4 +44,9 @@ import java.awt.print.Pageable;
                 return ResponseEntity.badRequest().body(e.getMessage());
             }
         }
+
+        @DeleteMapping("/{idProjeto}")
+        public void deleteById(@PathVariable("idProjeto") Long idProjeto, Projeto projeto) {
+            projetoService.deleteById(idProjeto, projeto);
+        }
     }

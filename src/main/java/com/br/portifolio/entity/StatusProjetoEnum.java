@@ -5,6 +5,7 @@ public enum StatusProjetoEnum {
     em_analise("Em analise"),
     analise_realizada("Analise realizada"),
     analise_aprovada("Analise aprovada"),
+    iniciado("Iniciado"),
     planejado("Planejado"),
     em_andamento("Em andamento"),
     encerrado("Encerrado"),
